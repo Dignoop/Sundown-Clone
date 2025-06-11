@@ -2,6 +2,9 @@ let item = document.querySelectorAll(".nav-item");
 let backgrounds = document.querySelectorAll(".nav-bg");
 const track = document.querySelector(".slider-track");
 const images = gsap.utils.toArray(".slider-track h1,.dot");
+let redmov=document.querySelector(".red2")
+
+
 
 item.forEach((item, index) => {
   item.addEventListener("mouseenter", () => {
@@ -82,5 +85,85 @@ containerss.forEach(function(container) {
     // Animate background layer slide up
     bgLayer.style.top = '-100%';
   });
+});
+
+
+// X axis movement
+gsap.to(".red2", {
+  x: -70,
+  duration: 3,
+  repeat: -1,
+  yoyo: true,
+  ease: "power1.inOut"
+});
+
+// Y axis movement
+gsap.to(".red2", {
+  y: 70,
+  duration: 4,  // Different duration to make it natural floating
+  repeat: -1,
+  yoyo: true,
+  ease: "power1.inOut"
+});
+
+
+
+const headings = document.querySelectorAll('.textp4');
+const paras = document.querySelectorAll('.p1, .p2, .p3');
+const imgs = document.querySelectorAll('.img1, .img2, .img3');
+
+// Hide everything first
+function hideAll() {
+  paras.forEach(p => p.classList.add('hidden'));
+  imgs.forEach(img => img.classList.add('hidden'));
+}
+
+// Reset all headings
+function resetHeadings() {
+  headings.forEach(h => {
+    gsap.to(h, { color: '#504A45', fontSize: '60px', duration: 0.4, ease: 'power2.out' });
+  });
+}
+
+// Click listener for each heading
+headings.forEach(heading => {
+  heading.addEventListener('click', () => {
+    hideAll();
+    resetHeadings();
+
+    const id = heading.dataset.id;
+
+    // Show correct paragraph and image
+    document.querySelector(`.p${id}`).classList.remove('hidden');
+    document.querySelector(`.img${id}`).classList.remove('hidden');
+
+    // Animate clicked heading with GSAP
+    gsap.to(heading, { color: '#ffffff', fontSize: '65px', duration: 0.4, ease: 'power2.out' });
+  });
+});
+
+// Optional: show first one on load
+hideAll();
+resetHeadings();
+document.querySelector('.p1').classList.remove('hidden');
+document.querySelector('.img1').classList.remove('hidden');
+gsap.to(headings[0], { color: '#ffffff', fontSize: '65px', duration: 0.4, ease: 'power2.out' });
+
+
+gsap.to(".red5", {
+  x: -90,
+  duration: 3,
+  repeat: -1,
+  yoyo: true,
+  ease: "power1.inOut"
+});
+
+// Y axis movement
+gsap.to(".red5", {
+  y: 60,
+  duration: 4,  // Different duration to make it natural floating
+  repeat: -1,
+  yoyo: true,
+  ease: "power1.inOut"
 });
 
