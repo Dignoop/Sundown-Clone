@@ -1,4 +1,5 @@
-let item = document.querySelectorAll(".nav-item");
+function website(){
+  let item = document.querySelectorAll(".nav-item");
 let backgrounds = document.querySelectorAll(".nav-bg");
 const track = document.querySelector(".slider-track");
 const images = gsap.utils.toArray(".slider-track h1,.dot");
@@ -167,3 +168,24 @@ gsap.to(".red5", {
   ease: "power1.inOut"
 });
 
+const words = ["Environment", "Experience", "Content"];
+  const wordEl = document.getElementById("word");
+
+  const tl = gsap.timeline();
+
+  words.forEach((word, i) => {
+    tl.call(() => wordEl.textContent = word, null, i * 1.5)
+      .fromTo(wordEl, { opacity: 0 }, { opacity: 1, duration: 0.3 })
+      .to(wordEl, { opacity: 0, duration: 0.5, delay: 0.2 });
+  });
+
+  tl.to("#loader", { y: "-100%", duration: 0.8, ease: "power4.inOut" })
+    .set("#loader", { display: "none" })
+    .set("#main", { display: "block" });
+}
+website()
+
+const scroll = new LocomotiveScroll({
+    el: document.querySelector('.main'),
+    smooth: true
+    });

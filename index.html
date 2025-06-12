@@ -10,10 +10,11 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <title>Document</title>
   </head>
   <body class="bg-[#efeae3] font-noto h-full w-full">
-    <div class="main relative z-30">
+    <div class="main  relative z-30">
       <div class="navbar z-10 h-full w-full bg-[#efeae3]">
         <div class="nav p-[5vh] flex justify-between">
           <div class="right">
@@ -61,13 +62,13 @@
       <div
         class="page1 bg-[#efeae3] z-10 relative min-h-[100vh] w-full p-[5vh]"
       >
-        <div class="conttop flex border-b border-gray-400 h-[70vh]">
+        <div class="conttop w-full flex border-b border-gray-400 h-[70vh]">
           <div class="right w-[28vw] text-[28px] pt-[44vh] font-bold leading-9">
             Sundown is a multi-disciplinary studio focused on creating unique,
             end-to-end experiences and environments.
           </div>
           <div
-            class="left w-[72vw] z-10 font-bold text-[150px] text-wrap pl-[90px] flex text-right leading-30 pt-[140px]"
+            class="left w-[62vw] z-10 font-bold text-[155px] text-wrap pl-[90px] flex text-right leading-30 pt-[140px]"
           >
             SPACES THAT INSPIRE
           </div>
@@ -120,6 +121,7 @@
 
             <div class="flex items-center gap-[20px]">
               <h1>content</h1>
+              <div class="h-[100px] w-[100px] rounded-full bg-[#FE330A]"></div>
             </div>
           </div>
         </div>
@@ -311,13 +313,13 @@
       >
         <div class="black-box cursor-default h-[804px] flex rounded-[30px] w-[95vw] bg-black">
           <div class="left2 text-center pt-[30vh] w-[40%] h-full">
-            <h1 class="textp4 text-[#504A45] text-[60px] font-bold" data-id="1">
+            <h1 class="textp4 cursor-pointer text-[#504A45] text-[60px] font-bold" data-id="1">
               Design
             </h1>
-            <h1 class="textp4 text-[#504A45] text-[60px] font-bold" data-id="2">
+            <h1 class="textp4 cursor-pointer text-[#504A45] text-[60px] font-bold" data-id="2">
               Project
             </h1>
-            <h1 class="textp4 text-[#504A45] text-[60px] font-bold" data-id="3">
+            <h1 class="textp4 cursor-pointer text-[#504A45] text-[60px] font-bold" data-id="3">
               Execution
             </h1>
 
@@ -473,9 +475,11 @@
         <h2>Contact</h2>
       </div>
     </div>
-    
+    <div id="loader" class="fixed inset-0 bg-black flex justify-center items-center z-50 overflow-hidden">
+  <h1 id="word" class="text-[80px] bg-gradient-to-r from-orange-300 to-orange-600 bg-clip-text text-transparent font-bold"></h1>
+</div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
       integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
